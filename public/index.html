@@ -2,16 +2,24 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <title>Your Title Here</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function(){
-            $("#includedContent").load("meta.html");
+            // Load meta tags from b.html
+            $.get("meta.html", function(data) {
+                // Find meta tags in the loaded HTML
+                var metaTags = $(data).filter("meta");
+                // Append each meta tag to the <head> of index.html
+                metaTags.each(function() {
+                    $("head").append($(this));
+                });
+            });
         });
     </script>
 </head>
 <body>
-    <div id="includedContent"></div>
-    <!-- Your other content here -->
+    <!-- Your content here -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
 </body>
