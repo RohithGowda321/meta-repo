@@ -1,20 +1,24 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-
-
-          <meta name="description" content="This app provides end-to-end information about the Global Coffee Industry" />
-          <meta property="og:title" content="www.coffeeweb.com" />
-          <meta property="og:description" content="This app provides end-to-end information about the Global Coffee Industry" />
-          <meta property="og:url" content="www.coffeeweb.com" />
-          <meta property="og:type" content="website" />
-          <meta property="og:image" content="https://coffeeweb.s3.ap-south-1.amazonaws.com/coffeeweb_menu_icons/CoffeeWeb_Logo_White_Background_Blue_Text.png" />
-
-
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch("meta.html")
+          .then(response => response.text())
+          .then(data => {
+            document.querySelector("head").innerHTML += data;
+          })
+          .catch(error => console.error('Error loading meta.html:', error));
+      });
+    </script>
+    <style>
+      body {
+        position: relative !important;
+        top: 0px !important;
+        font-family: Arial, sans-serif; /* Example: specify a default font */
+      }
+    </style>
+    <title>CoffeeWeb</title>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
