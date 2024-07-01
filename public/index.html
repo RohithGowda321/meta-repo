@@ -9,9 +9,7 @@
 
   <!-- JavaScript for conditional meta tag -->
   <script>
-      const isProd = (window.location.hostname === 'https://main--meta-new.netlify.app') 
-
-
+    const isProd = "https://main--meta-new.netlify.app" === window.location.hostname;
     if (isProd) {
       var metaTag = document.createElement('meta');
       metaTag.setAttribute('property', 'og:image');
