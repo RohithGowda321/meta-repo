@@ -1,30 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Helmet } from 'react-helmet';
+import logo from './logo.svg';
+import './App.css';
 
-const App = () => {
-  const isProduction = process.env.NODE_ENV === 'production';
-
+function App() {
   return (
-    <div>
-      <Helmet>
-        <meta charSet="utf-8" />
-        <title>My App</title>
-        {isProduction && (
-          <>
-            <meta name="description" content="This app provides end-to-end information about the Global Coffee Industry" />
-            <meta property="og:title" content="www.coffeeweb.com" />
-            <meta property="og:description" content="This app provides end-to-end information about the Global Coffee Industry" />
-            <meta property="og:url" content="www.coffeeweb.com" />
-            <meta property="og:type" content="website" />
-            <meta property="og:image" content="https://coffeeweb.s3.ap-south-1.amazonaws.com/coffeeweb_menu_icons/CoffeeWeb_Logo_White_Background_Blue_Text.png" />
-          </>
-        )}
-      </Helmet>
-      <h1>Hello, world!</h1>
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
     </div>
   );
-};
-export default App;
+}
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;
