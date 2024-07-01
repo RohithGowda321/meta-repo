@@ -1,32 +1,27 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <object type="text/html" data="meta.html"></object>
-    <style>
-      body {
-        position: relative !important;
-        top: 0px !important;
-      }
-    </style>
-    <title class="font-bold">CoffeeWeb</title>
-  </head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
 
+    <!-- Meta tags will be loaded dynamically here -->
+    <script>
+      // Fetch and insert meta tags from another HTML file
+      fetch('meta-tags.html')
+        .then(response => response.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, 'text/html');
+          const metaTags = doc.head.querySelectorAll('meta');
+          metaTags.forEach(meta => document.head.appendChild(meta));
+        })
+        .catch(error => console.error('Error loading meta tags:', error));
+    </script>
+  </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- Option 1: Using object tag to include external HTML -->
-    <object type="text/html" data="meta.html"></object>
-
-    <!-- Option 2: Using HTML5 Import (note: limited browser support) -->
-    <!-- <link href="extern.html" rel="import" /> -->
-
-    <!-- JavaScript for client-side file import (optional) -->
-    <script>
-      // Example: JavaScript to dynamically import an external HTML file
-      $(document).ready(function(){
-        $("#root").load("meta.html");
-      });
-    </script>
   </body>
 </html>
