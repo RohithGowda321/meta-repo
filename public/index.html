@@ -6,14 +6,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
         $(function(){
-            // Load meta tags from b.html
+            // Load the contents of b.html
             $.get("meta.html", function(data) {
-                // Find meta tags in the loaded HTML
-                var metaTags = $(data).filter("meta");
-                // Append each meta tag to the <head> of index.html
-                metaTags.each(function() {
-                    $("head").append($(this));
-                });
+                // Extract head contents from b.html
+                var headContents = $(data).filter("head").html();
+                // Append head contents to the head of index.html
+                $("head").append(headContents);
             });
         });
     </script>
