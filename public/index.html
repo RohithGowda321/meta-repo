@@ -1,33 +1,18 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <object type="text/html" data="meta.html"></object>
-    <style>
-      body {
-        position: relative !important;
-        top: 0px !important;
-      }
-    </style>
-    <title class="font-bold">CoffeeWeb</title>
-    <object type="text/html" data="meta.html"></object>
+<head>
+    <meta charset="utf-8" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script>
-      // Example: JavaScript to dynamically import an external HTML file
-      $(document).ready(function(){
-        $("#root").load("external-file.html");
-      });
+        $(function(){
+            $("#includedContent").load("b.html");
+        });
     </script>
-  </head>
-
-  <body>
+</head>
+<body>
+    <div id="includedContent"></div>
+    <!-- Your other content here -->
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
-
-    <!-- Option 1: Using object tag to include external HTML -->
-
-    <!-- Option 2: Using HTML5 Import (note: limited browser support) -->
-    <!-- <link href="extern.html" rel="import" /> -->
-
-    <!-- JavaScript for client-side file import (optional) -->
-   
-  </body>
+</body>
 </html>
