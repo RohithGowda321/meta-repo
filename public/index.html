@@ -1,27 +1,32 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-        fetch("meta.html")
-          .then(response => response.text())
-          .then(data => {
-            document.querySelector("head").innerHTML += data;
-          })
-          .catch(error => console.error('Error loading meta.html:', error));
-      });
-    </script>
+    <object type="text/html" data="meta.html"></object>
     <style>
       body {
         position: relative !important;
         top: 0px !important;
-        font-family: Arial, sans-serif; /* Example: specify a default font */
       }
     </style>
-    <title>CoffeeWeb</title>
+    <title class="font-bold">CoffeeWeb</title>
   </head>
+
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <!-- Option 1: Using object tag to include external HTML -->
+    <object type="text/html" data="meta.html"></object>
+
+    <!-- Option 2: Using HTML5 Import (note: limited browser support) -->
+    <!-- <link href="extern.html" rel="import" /> -->
+
+    <!-- JavaScript for client-side file import (optional) -->
+    <script>
+      // Example: JavaScript to dynamically import an external HTML file
+      $(document).ready(function(){
+        $("#root").load("meta.html");
+      });
+    </script>
   </body>
 </html>
