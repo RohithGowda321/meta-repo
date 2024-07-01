@@ -1,61 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="This app provides end-to-end information about the Global Coffee Industry"
-    />
-    <link rel="icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link
-      rel="stylesheet"
-      href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-    />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Main HTML with Meta Tags</title>
+</head>
+<body>
 
-    <style>
-      body {
-        position: relative;
-        top: 0;
-      }
-    </style>
+<object type="text/html" data="meta.html" width="0" height="0"></object>
 
-    <title>CoffeeWeb</title>
+<h1>Main Content of Your HTML Page</h1>
+<p>This is the main content of your page.</p>
 
-    <!-- Script to dynamically load meta tags -->
-    <script>
-      // Function to load meta tags dynamically
-      function loadMetaTags() {
-        fetch("public/meta.html")
-          .then((response) => response.text())
-          .then((html) => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, "text/html");
-
-            // Get head element of meta-tags.html
-            const head = doc.querySelector("head");
-
-            // Append meta tags to current document head
-            head.querySelectorAll("meta").forEach((meta) => {
-              document.head.appendChild(meta.cloneNode(true));
-            });
-          })
-          .catch((error) => {
-            console.error("Error loading meta tags:", error);
-          });
-      }
-
-      // Call function to load meta tags
-      loadMetaTags();
-    </script>
-  </head>
-
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  </body>
+</body>
 </html>
