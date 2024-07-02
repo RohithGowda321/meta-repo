@@ -1,6 +1,5 @@
 // meta.js
 const metaTags = [
-    { name: "viewport", content: "width=device-width, initial-scale=1" },
     { name: "description", content: "This app provides end-to-end information about the Global Coffee Industry" },
     { property: "og:title", content: "www.coffeeweb.com" },
     { property: "og:description", content: "This app provides end-to-end information about the Global Coffee Industry" },
