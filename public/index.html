@@ -1,26 +1,36 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <title class="font-bold">CoffeeWeb</title>
-    <script src="meta.js" defer></script>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
+    <meta name="description" content="This app provides end-to-end information about the Global Coffee Industry" />
     <style>
       body {
         position: relative !important;
         top: 0px !important;
       }
     </style>
-
+    <title>CoffeeWeb</title>
   </head>
 
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        fetch('meta.html')
+          .then(response => response.text())
+          .then(data => {
+            const head = document.querySelector('head');
+            head.insertAdjacentHTML('beforeend', data);
+          })
+          .catch(error => console.error('Error loading meta tags:', error));
+      });
+    </script>
   </body>
 </html>
