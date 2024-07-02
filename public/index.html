@@ -1,44 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="shortcut icon" href="favicon.ico" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css" />
-    <meta name="description" content="This app provides end-to-end information about the Global Coffee Industry" />
-    <style>
-      body {
-        position: relative !important;
-        top: 0px !important;
-      }
-    </style>
-    <title>CoffeeWeb</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <script>
-      async function appendMetaTags() {
-        try {
-          const response = await fetch('meta-tags.json');
-          const metaTags = await response.json();
-          metaTags.forEach(tag => {
-            const meta = document.createElement('meta');
-            meta.setAttribute('property', tag.property);
-            meta.setAttribute('content', tag.content);
-            document.head.appendChild(meta);
-          });
-        } catch (error) {
-          console.error('Error fetching meta tags:', error);
-        }
-      }
-
-      // Call the function to append meta tags
-      appendMetaTags();
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>%REACT_APP_TITLE%</title>
+  <!-- Add other meta tags here -->
+  <meta name="description" content="%REACT_APP_DESCRIPTION%" />
+  <meta property="og:title" content="%REACT_APP_OG_TITLE%" />
+  <meta property="og:description" content="%REACT_APP_OG_DESCRIPTION%" />
+  <meta property="og:url" content="%REACT_APP_OG_URL%" />
+  <meta property="og:type" content="%REACT_APP_OG_TYPE%" />
+  <meta property="og:image" content="%REACT_APP_OG_IMAGE%" />
+</head>
+<body>
+  <noscript>
+    You need to enable JavaScript to run this app.
+  </noscript>
+  <div id="root"></div>
+</body>
 </html>
